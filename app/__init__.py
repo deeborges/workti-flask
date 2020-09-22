@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.config.from_object('config')
 app.secret_key = 'some secret key' # tive que passar isso aqui pra poder funcioanar
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db' # mesma coisa aqui tbm (ele gera o db.sqlite)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # databse connection
 db = SQLAlchemy(app)
